@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShareExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCx-ar-wjc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="6NJ-Xw-mHJ"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-15-dp6">
+                                <rect key="frame" x="0.0" y="414" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Sly-4O-Iud"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-Ai-o8X">
+                                <rect key="frame" x="20" y="654" width="374" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-zF-QS1">
+                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Share Web Link"/>
+                                        <connections>
+                                            <action selector="shareWebLink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ckl-E8-coy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bM9-Nt-g2M">
+                                        <rect key="frame" x="129.5" y="0.0" width="115" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Share Image"/>
+                                        <connections>
+                                            <action selector="shareImg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zig-Rh-mtN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="923-3m-NnW">
+                                        <rect key="frame" x="259.5" y="0.0" width="114.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Share PDF"/>
+                                        <connections>
+                                            <action selector="sharePdf:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKD-HI-5lb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Baz-Ai-o8X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6QZ-nu-c7T"/>
+                            <constraint firstItem="Baz-Ai-o8X" firstAttribute="top" secondItem="cCg-15-dp6" secondAttribute="bottom" constant="20" id="9PJ-Of-XV6"/>
+                            <constraint firstItem="cCg-15-dp6" firstAttribute="top" secondItem="qCx-ar-wjc" secondAttribute="bottom" constant="20" id="AIt-Jk-HIG"/>
+                            <constraint firstItem="qCx-ar-wjc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CKu-Jy-3OE"/>
+                            <constraint firstItem="qCx-ar-wjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FHe-J5-jh2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Baz-Ai-o8X" secondAttribute="trailing" constant="20" id="IPi-yM-Gi3"/>
+                            <constraint firstItem="cCg-15-dp6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VMU-M4-Fcu"/>
+                            <constraint firstItem="cCg-15-dp6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aa7-eo-3z6"/>
+                            <constraint firstItem="qCx-ar-wjc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sB6-bB-fTa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="cCg-15-dp6" id="eRE-Uc-kV9"/>
+                        <outlet property="webView" destination="qCx-ar-wjc" id="zef-Ey-MKU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
